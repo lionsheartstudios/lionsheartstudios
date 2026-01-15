@@ -128,28 +128,16 @@
     <main class="ui">
       
 <!-- HERO: Play Game -->
-<section
-  class="freeplay relative h-screen min-h-screen w-full pb-[20vh]
-         bg-[var(--flatify__color-blue-primary)] overflow-hidden"
->
-  <!-- Background Image -->
-  <video
-  id="heroImg"
-    class="absolute inset-0 w-full h-full object-cover object-[center_10%] pointer-events-none select-none scale-[115%]"
-    autoplay
-    muted
-    loop
-    playsinline
-  >
-    <source src="/lionsheartstudios/site-click-play/assets/video/short_clip.webm" type="video/webm" />
-    <!-- Optional fallback -->
-    <img
-      src="/lionsheartstudios/site-click-play/assets/main_page.png"
-      alt="Playconomics hero background"
-    />
-  </video>
-
-  <!--<div class="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-10 z-10"></div>-->
+<section id="freeplayHero" class="freeplay relative h-screen min-h-screen w-full pb-[20vh]
+         bg-[var(--flatify__color-blue-primary)] overflow-hidden">
+  <!-- Background Image (Landing) -->
+  <img
+    id="heroImg"
+    src="/lionsheartstudios/site-click-play/assets/main_page.png"
+    alt="Playconomics hero background"
+    class="absolute inset-0 w-full h-full object-cover object-[center_10%]
+           pointer-events-none select-none"
+  />
 
   <!-- Background Image (Game) -->
   <img
@@ -157,7 +145,7 @@
     src="/lionsheartstudios/site-click-play/assets/game_example.png"
     alt="Playconomics game view"
     class="absolute inset-0 w-full h-full object-cover object-center
-           pointer-events-none select-none hidden"
+           pointer-events-none select-none"
   />
 
   <!-- Play / Loading Buttons -->
@@ -212,6 +200,8 @@
   </div>
 </section>
 
+
+<div id="belowHeroContent">
 <div
   id="simple-section-root"
   data-index="0"
@@ -285,6 +275,7 @@
     </div>
   </div>
 </section>
+</div>
     </main>
 
     <!-- AUTH MODAL (Semantic modal structure) -->

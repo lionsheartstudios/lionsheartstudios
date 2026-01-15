@@ -71,7 +71,7 @@ body[data-page="news"] .tab:hover {
 
 /* Hide the whole top header when scrolling down */
 #siteHeader {
-  transition: transform 220ms ease, opacity 220ms ease;
+  transition: transform 1s ease, opacity 1s ease;
   will-change: transform, opacity;
 }
 
@@ -143,4 +143,65 @@ body[data-page="news"] .tab:hover {
   0%   { transform: scale(1);    opacity: 1; }
   40%  { transform: scale(1.18); opacity: 0; }
   100% { transform: scale(1.18); opacity: 0; }
+}
+
+/* --- Fullscreen mode toggled after game load --- */
+
+body.is-game-loaded {
+  overflow: hidden;            /* lock page scrolling */
+  height: 100vh;
+}
+
+/* make sure hero truly behaves like fullscreen */
+#freeplayHero {
+  position: relative;
+  height: 100vh;
+}
+
+/* If you want the header to hide with same moment (you already do header--hidden) */
+body.is-game-loaded #siteHeader {
+  pointer-events: none;
+}
+
+/* Animate everything below hero out of view (10s so you can verify) */
+#belowHeroContent {
+  max-height: var(--below-hero-maxh, 99999px);
+
+  will-change: transform, opacity, max-height;
+  transition:
+    transform 1s ease,
+    opacity 1s ease,
+    max-height 1s ease;
+}
+
+body.is-game-loaded #belowHeroContent {
+  transform: translateY(24px);
+  opacity: 0;
+  pointer-events: none;
+  max-height: 0px;
+}
+
+body.is-game-loaded #scrollTopBtn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Game image fade-in */
+#gameImg {
+  opacity: 0;
+  transition: opacity 800ms ease; /* tweak duration */
+}
+
+#gameImg.is-visible {
+  opacity: 1;
+}
+
+/* Optional: fade hero out too (nice crossfade) */
+#heroImg {
+  opacity: 1;
+  transition: opacity 800ms ease;
+}
+
+#heroImg.is-hidden {
+  opacity: 0;
 }

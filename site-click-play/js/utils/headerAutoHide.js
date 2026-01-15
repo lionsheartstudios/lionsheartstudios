@@ -36,4 +36,9 @@ export function initHeaderAutoHide() {
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
+
+  // ✅ Hide header when loading finishes
+  window.addEventListener("freeplay:loaded", () => {
+    setHidden(true);
+  });
 }
