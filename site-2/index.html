@@ -133,11 +133,22 @@
          bg-[var(--flatify__color-blue-primary)] overflow-hidden"
 >
   <!-- Background Image -->
-  <img
-    src="/lionsheartstudios/site-2/assets/main_page.png"
-    alt="Playconomics hero background"
-    class="absolute inset-0 w-full h-full object-cover object-[center_10%] pointer-events-none select-none"
-  />
+  <video
+    class="absolute inset-0 w-full h-full object-cover object-[center_10%] pointer-events-none select-none scale-[115%]"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+    <source src="/lionsheartstudios/site-2/assets/video/short_clip.webm" type="video/webm" />
+    <!-- Optional fallback -->
+    <img
+      src="/lionsheartstudios/site-2/assets/main_page.png"
+      alt="Playconomics hero background"
+    />
+  </video>
+
+  <div class="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-10 z-10"></div>
 
   <!-- Play Button -->
   <button
