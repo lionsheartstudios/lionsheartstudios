@@ -1,7 +1,7 @@
 import { $ } from "../utils/dom.js";
 import { state } from "../state/sessionState.js";
 import { hardHideMenu, dropdownEls } from "../ui/dropdowns.js";
-import { addPrefixAndSiteVersion, addPrefixOnly } from "../utils/addDirectoryPrefix";
+import { addPrefixAndSiteVersion, addPrefixOnly } from "../utils/addDirectoryPrefix.js";
 
 /* =========================
         AUTH UI SWAP (NO PERSISTENCE)

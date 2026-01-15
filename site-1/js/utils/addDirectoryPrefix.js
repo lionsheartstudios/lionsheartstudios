@@ -6,10 +6,9 @@ export const addPrefixAndSiteVersion = (path) => {
 export const addPrefixOnly = (path = "") => {
   const prefix = import.meta?.env?.VITE_PATH_PREFIX || "";
 
-  const base =
-    "/" +
-    prefix.replace(/^\/|\/$/g, "") +
-    "/";
+  const base = prefix
+    ? `/${prefix.replace(/^\/|\/$/g, "")}`
+    : "";
 
-  return `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+  return `${base}/${path.replace(/^\//, "")}` || "/";
 };

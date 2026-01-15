@@ -2,7 +2,7 @@ import { $ } from "../utils/dom.js";
 import { state } from "../state/sessionState.js";
 import { hardHideMenu, closeMenu, dropdownEls } from "../ui/dropdowns.js";
 import { setLoggedInUI } from "../auth/authUI.js";
-import { addPrefixAndSiteVersion, addPrefixOnly } from "../utils/addDirectoryPrefix";
+import { addPrefixAndSiteVersion, addPrefixOnly } from "../utils/addDirectoryPrefix.js";
 
 /* =========================
         PROFILE MODAL
