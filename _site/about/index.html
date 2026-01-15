@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+
+    <!-- Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/semantic.min.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/flatify-semantic-override.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="/tailwind/tailwind.css" />
+  </head>
+
+  <body data-page="about">
+
+    <!-- HEADER (Semantic menu) -->
+    <header
+      id="siteHeader"
+      class="ui top fixed borderless menu"
+      style="background-color: transparent; box-shadow: none; border: 0;"
+    >
+      <!-- Left side -->
+      <div class="left absolute top-4 left-0">
+        <a href="/"
+        class="uppercase font-black tracking-wide text-3xl m-4"
+        id="text-logo">
+          PLAYCONOMICS
+        </a>
+      </div>
+    
+      <div class="ui container w-[1780px] h-[64px] flex justify-center items-center">
+        <div class="tabs" id="navMenu" role="menu" aria-label="Primary navigation">
+          <a class="tab flatify-tooltip" href="/" data-page-link="freeplay">
+            <i aria-hidden="true" class="fas fa-play fa-2x"></i>
+            <span class="tab-title">Freeplay</span>
+            <span class="flatify-tooltiptext">Continue Your adventure!</span>
+          </a>
+          <a class="tab flatify-tooltip" href="/tournaments/" data-page-link="tournaments">
+            <i aria-hidden="true" class="fas fa-stopwatch fa-2x"></i>
+            <span class="tab-title">Tournaments</span>
+            <span class="flatify-tooltiptext">Earn Prizes!</span>
+          </a>
+          <a class="tab flatify-tooltip" href="/news/" data-page-link="news">
+            <i aria-hidden="true" class="fas fa-newspaper fa-2x"></i>
+            <span class="tab-title">News</span>
+            <span class="flatify-tooltiptext">The Latest in Playconomics</span>
+          </a>
+          <a class="tab flatify-tooltip" href="/course/" data-page-link="course">
+            <i aria-hidden="true" class="fas fa-graduation-cap fa-2x"></i>
+            <span class="tab-title">Academia</span>
+            <span class="flatify-tooltiptext">Academia: Learning Evolved</span>
+          </a>
+        </div>
+
+        <!-- Right side -->
+        <div class="right absolute top-0 right-0">
+          <!-- Default: show Login/Signup -->
+          <div id="authArea" class="item" aria-label="Authentication">
+            <a
+              class="text-slate-400 uppercase font-bold tracking-wide cursor-pointer hover:text-slate-500 hover:underline"
+              id="btnLogin"
+              type="button"
+            >
+              Login
+            </a>
+          </div>
+
+          <!-- Default: avatar hidden -->
+          <div class="ui dropdown item hidden relative overflow-visible" id="userDropdown">
+            <a id="avatarBtn" class="inline-flex items-center">
+              <img
+                class="ui avatar image"
+                id="headerAvatarImg"
+                src="/img/avatar.png"
+                alt="User avatar"
+              />
+            </a>
+
+            <div
+            class="menu absolute top-full right-4 left-auto mt-2 z-[3000]
+                  min-w-[180px] max-w-[calc(100vw-24px)]
+                  bg-white shadow-lg rounded-xl overflow-hidden"
+              id="userMenu"
+              role="menu"
+              aria-label="User menu"
+            >
+              <button class="item w-full text-right" type="button" data-user-action="profile">Profile</button>
+              <button class="item w-full text-right" type="button" data-user-action="edit-avatar">
+                Edit Avatar
+              </button>
+              <button class="item w-full text-right" type="button" data-user-action="profile">Manage Licences</button>
+              <button class="item w-full text-right" type="button" data-user-action="profile">Unlocks/Rewards</button>
+              <button
+                class="item w-full text-right"
+                type="button"
+                data-user-action="manage-courses"
+              >
+                Manage Courses
+              </button>
+              <button class="item w-full text-right" type="button" data-user-action="signout">Log Out</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <!-- Scroll-to-top button (shows when header hides) -->
+    <button
+      id="scrollTopBtn"
+      type="button"
+      aria-label="Scroll to top"
+      title="Back to top"
+      class="ui icon button"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- PAGE CONTENT -->
+    <main class="ui">
+      
+<section class="waves-page" style="background: var(--flatify__color-blue-dark);">
+  <div class="wave-layer back">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="var(--flatify__color-blue-primary)"
+        d="M0,400 C240,300 480,600 720,450 C960,300 1200,200 1440,350 L1440,800 L0,800 Z"/>
+      <path fill="var(--flatify__bg-color-darker)" opacity="0.45"
+        d="M0,520 C220,620 460,420 700,490 C940,560 1080,700 1300,630 C1380,600 1420,570 1440,560 L1440,800 L0,800 Z"/>
+    </svg>
+  </div>
+  <div class="wave-layer front">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="var(--playconomics-blue)"
+        d="M0,520 C260,420 520,640 780,520 C1040,400 1280,320 1440,420 L1440,800 L0,800 Z"/>
+      <path fill="var(--flatify__color-green-primary)" opacity="0.55"
+        d="M0,650 C260,720 520,540 760,610 C1000,680 1140,790 1340,720 C1400,690 1425,670 1440,660 L1440,800 L0,800 Z"/>
+    </svg>
+  </div>
+</section>
+
+    </main>
+
+    <!-- AUTH MODAL (Semantic modal structure) -->
+    <!-- Toggle visibility by adding/removing "active" on .dimmer and .modal -->
+    <div
+      id="authOverlay"
+      class="ui dimmer modals page transition hidden
+            fixed inset-0 flex items-center justify-center
+            bg-black/40 z-50"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="authTitle"
+      aria-hidden="true"
+    >
+      <div
+        class="ui modal transition hidden
+              w-[520px] h-[500px] bg-white rounded-[1.75rem] shadow-xl flex flex-col"
+        role="document"
+      >
+        <div
+            class="header flex items-start justify-between px-6 pt-8 pb-0 border-none bg-transparent"
+          >
+            <div id="authHeaderText">
+              <div class="ui header" id="authTitle" style="margin: 0;">Welcome</div>
+              <div class="sub header" id="authSubtitle">Prototype flow</div>
+            </div>
+
+            <button
+              class="ui icon button !bg-transparent !shadow-none !border-none !p-0"
+              id="authCloseBtn"
+              aria-label="Close"
+              type="button"
+            >
+              <i class="fa-solid fa-xmark text-slate-400 text-lg"></i>
+            </button>
+          </div>
+
+        <div class="content flex-1 flex flex-col">
+          <div class="ui steps" id="authStepper"></div>
+          <div
+            id="authContent"
+            class="flex-1 flex items-center justify-center"
+          ></div>
+        </div>
+
+        <div class="actions" id="authActions">
+          <div class="ui left floated basic buttons">
+            <button class="ui button" id="authBackBtn" type="button">Back</button>
+            <button class="ui button" id="authAltBtn" type="button">Use a different method</button>
+          </div>
+          <div class="ui right floated buttons">
+            <button class="ui secondary button" id="authSecondaryBtn" type="button">Cancel</button>
+            <button class="ui primary button" id="authPrimaryBtn" type="button">Continue</button>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AVATAR CUSTOMISE MODAL -->
+    <div
+      id="avatarOverlay"
+      class="ui dimmer modals page transition hidden fixed inset-0 flex items-center justify-center bg-black/40 z-50 pointer-events-auto"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="avatarTitle"
+      aria-hidden="true"
+    >
+      <div
+        class="ui modal transition hidden w-[980px] max-w-[95vw] h-[560px] max-h-[90vh]
+              bg-white rounded-[1.75rem] shadow-xl flex flex-col overflow-hidden
+              pointer-events-auto"
+        role="document"
+      >
+        <!-- Header -->
+        <div class="flex items-center justify-between px-6 py-4 bg-white">
+          <div class="font-black tracking-wide text-slate-700" id="avatarTitle">
+            CUSTOMISE AVATAR
+          </div>
+
+          <button
+            class="ui icon button !bg-transparent !shadow-none !border-none !p-0"
+            id="avatarCloseBtn"
+            aria-label="Close"
+            type="button"
+          >
+            <i class="fa-solid fa-xmark text-slate-400 text-lg"></i>
+          </button>
+        </div>
+
+        <!-- BODY WRAPPER (two full views) -->
+        <div class="flex-1 overflow-hidden">
+
+          <!-- =========================================================
+              VIEW 1: CUSTOMISER (2-col layout)
+          ========================================================== -->
+          <div
+            id="avatarCustomizerView"
+            class="h-full grid grid-cols-[420px_1fr] gap-0 overflow-hidden"
+          >
+            <!-- Left preview -->
+            <div class="bg-[#fbfbcb] flex items-center justify-center">
+              <!-- NOTE: removed bg-white/60 to avoid "faint lines" effect.
+                  If you *want* the card look back, re-add bg-white/60. -->
+              <div class="w-[360px] h-[360px] rounded-3xl flex items-center justify-center shadow-sm">
+                <img
+                  id="avatarPreviewImg"
+                  src="/img/full_body_avatar.png"
+                  alt="Avatar preview"
+                  class="w-[520px] h-[520px] object-contain"
+                />
+              </div>
+            </div>
+
+            <!-- Right customiser -->
+            <div class="bg-white flex flex-col overflow-hidden">
+
+              <!-- Category row (placeholder icons) -->
+              <div class="px-5 pt-4">
+                <div class="flex items-center gap-4 text-slate-400">
+                  <button type="button" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center">
+                    <i class="fa-solid fa-user text-xs"></i>
+                  </button>
+                  <button type="button" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center">
+                    <i class="fa-solid fa-hat-wizard text-xs"></i>
+                  </button>
+                  <button type="button" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center">
+                    <i class="fa-solid fa-shirt text-xs"></i>
+                  </button>
+                  <button type="button" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center">
+                    <i class="fa-solid fa-face-smile text-xs"></i>
+                  </button>
+                  <button type="button" class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center">
+                    <i class="fa-solid fa-camera text-xs"></i>
+                  </button>
+                </div>
+                <div class="mt-2 h-[2px] w-full bg-slate-200"></div>
+              </div>
+
+              <!-- Grid area -->
+              <div class="flex-1 overflow-auto px-5 py-4">
+                <div class="grid grid-cols-4 gap-4">
+
+                  <!-- UNLOCKED tiles -->
+                  <button
+                    type="button"
+                    data-avatar-filter="hue-rotate(0deg)"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
+                  >
+                    <img src="/img/avatar.png" class="w-full h-[82px] object-contain" alt="item"/>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-avatar-filter="hue-rotate(30deg)"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
+                  >
+                    <img src="/img/avatar.png" class="w-full h-[82px] object-contain" alt="item"/>
+                  </button>
+
+                  <!-- LOCKED tile (clickable; JS will detect data-locked + data-price) -->
+                  <button
+                    type="button"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm opacity-95"
+                    data-locked="true"
+                    data-price="2"
+                    data-item-name="Quadruple Fringe"
+                  >
+                    <!-- keep grayscale portrait -->
+                    <img
+                      src="/img/avatar.png"
+                      class="w-full h-[82px] object-contain grayscale"
+                      alt="locked item"
+                    />
+
+                    <!-- bottom-center white badge (moved slightly up) -->
+                    <div class="absolute left-1/2 -translate-x-1/2 bottom-[6px]">
+                      <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm">
+                        <i class="fa-solid fa-lock text-slate-400 text-sm"></i>
+                        <span class="font-black text-slate-500 text-sm">$2</span>
+                      </div>
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-avatar-filter="hue-rotate(90deg)"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
+                  >
+                    <img src="/img/avatar.png" class="w-full h-[82px] object-contain" alt="item"/>
+                  </button>
+
+                  <!-- more unlocked -->
+                  <button
+                    type="button"
+                    data-avatar-filter="hue-rotate(45deg)"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
+                  >
+                    <img src="/img/avatar.png" class="w-full h-[82px] object-contain" alt="item"/>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-avatar-filter="hue-rotate(200deg)"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
+                  >
+                    <img src="/img/avatar.png" class="w-full h-[82px] object-contain" alt="item"/>
+                  </button>
+
+                  <!-- LOCKED tile -->
+                  <button
+                    type="button"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm opacity-95"
+                    data-locked="true"
+                    data-price="5"
+                    data-item-name="Double Fringe"
+                  >
+                    <img
+                      src="/img/avatar.png"
+                      class="w-full h-[82px] object-contain grayscale"
+                      alt="locked item"
+                    />
+
+                    <div class="absolute left-1/2 -translate-x-1/2 bottom-[6px]">
+                      <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm">
+                        <i class="fa-solid fa-lock text-slate-400 text-sm"></i>
+                        <span class="font-black text-slate-500 text-sm">$5</span>
+                      </div>
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-avatar-filter="hue-rotate(225deg)"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
+                  >
+                    <img src="/img/avatar.png" class="w-full h-[82px] object-contain" alt="item"/>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-avatar-filter="hue-rotate(360deg)"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
+                  >
+                    <img src="/img/avatar.png" class="w-full h-[82px] object-contain" alt="item"/>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-avatar-filter="hue-rotate(20deg)"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
+                  >
+                    <img src="/img/avatar.png" class="w-full h-[82px] object-contain" alt="item"/>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-avatar-filter="hue-rotate(170deg)"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
+                  >
+                    <img src="/img/avatar.png" class="w-full h-[82px] object-contain" alt="item"/>
+                  </button>
+
+                  <button
+                    type="button"
+                    data-avatar-filter="hue-rotate(190deg)"
+                    class="avatar-tile relative rounded-xl border border-slate-200 bg-white p-2 shadow-sm"
+                  >
+                    <img src="/img/avatar.png" class="w-full h-[82px] object-contain" alt="item"/>
+                  </button>
+
+                </div>
+              </div>
+
+              <!-- Color swatches row (optional; currently cosmetic) -->
+              <div class="px-5 pb-3">
+                <div class="flex items-center gap-2">
+                  <button class="w-7 h-7 rounded-lg bg-[#a3b18a] border border-slate-200" type="button"></button>
+                  <button class="w-7 h-7 rounded-lg bg-[#588157] border border-slate-200" type="button"></button>
+                  <button class="w-7 h-7 rounded-lg bg-[#3a5a40] border border-slate-200" type="button"></button>
+                  <button class="w-7 h-7 rounded-lg bg-[#b5838d] border border-slate-200" type="button"></button>
+                  <button class="w-7 h-7 rounded-lg bg-[#6d6875] border border-slate-200" type="button"></button>
+                  <button class="w-7 h-7 rounded-lg bg-[#f2cc8f] border border-slate-200" type="button"></button>
+                  <button class="w-7 h-7 rounded-lg bg-[#84a59d] border border-slate-200" type="button"></button>
+                  <button class="w-7 h-7 rounded-lg bg-[#f28482] border border-slate-200" type="button"></button>
+                </div>
+              </div>
+
+              <!-- Bottom controls -->
+              <div class="px-5 py-4 border-t border-slate-200 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <button type="button" class="ui icon button">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                  <input
+                    type="text"
+                    class="w-[170px] rounded-xl border border-slate-200 px-3 py-2 text-slate-500 font-bold"
+                    value="56060051571"
+                    readonly
+                  />
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <button type="button" class="ui button">
+                    <i class="fa-solid fa-shuffle mr-2"></i>
+                    Randomise
+                  </button>
+
+                  <!-- JS updates this label to "Buy $X" when a locked item is selected -->
+                  <button
+                    id="avatarSaveBtn"
+                    type="button"
+                    class="ui button !bg-[#58cc02] !text-white !font-black !rounded-full px-8"
+                  >
+                    SAVE
+                  </button>
+                </div>
+              </div>
+
+            </div> <!-- end Right customiser -->
+          </div> <!-- end avatarCustomizerView -->
+
+          <!-- =========================================================
+              VIEW 2: PURCHASE (replaces the entire customise avatar area)
+          ========================================================== -->
+          <div id="avatarPurchaseView" class="hidden h-full overflow-auto bg-white">
+            <div class="max-w-[760px] mx-auto px-10 pt-3 pb-12">
+
+              <div class="text-center text-3xl font-black text-slate-800" id="purchaseTitle">
+                Purchase New Accessory: Double Fringe
+              </div>
+
+              <!-- Big green pill -->
+              <div class="mt-5">
+                <button
+                  id="purchasePriceBtn"
+                  type="button"
+                  class="w-full rounded-full bg-[#58cc02] text-white font-black text-xl py-2
+                        shadow-[0_12px_28px_rgba(0,0,0,0.15)]"
+                >
+                  $2
+                </button>
+              </div>
+
+              <!-- Inputs -->
+              <div class="mt-4 space-y-3">
+                <div class="relative">
+                  <input
+                    type="text"
+                    placeholder="Card number"
+                    class="w-full rounded-2xl bg-slate-100 px-6 py-3 font-bold text-slate-700 placeholder-slate-500 outline-none"
+                  />
+                  <div class="absolute right-5 top-1/2 -translate-y-1/2 flex items-center gap-2 text-xs font-black text-slate-500">
+                    <span class="px-2 py-1 rounded bg-white">VISA</span>
+                    <span class="px-2 py-1 rounded bg-white">MC</span>
+                    <span class="px-2 py-1 rounded bg-white">AMEX</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                  <input
+                    type="text"
+                    placeholder="Expiration date"
+                    class="w-full rounded-2xl bg-slate-100 px-6 py-3 font-bold text-slate-700 placeholder-slate-500 outline-none"
+                  />
+                  <div class="relative">
+                    <input
+                      type="text"
+                      placeholder="Security code"
+                      class="w-full rounded-2xl bg-slate-100 px-6 py-3 font-bold text-slate-700 placeholder-slate-500 outline-none pr-16"
+                    />
+                    <div class="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 font-black text-sm">
+                      123
+                    </div>
+                  </div>
+                </div>
+
+                <div class="relative">
+                  <select class="w-full appearance-none rounded-2xl bg-slate-100 px-6 py-3 font-bold text-slate-700 outline-none">
+                    <option>Australia</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                    <option>Canada</option>
+                  </select>
+                  <div class="absolute right-6 top-1/2 -translate-y-1/2 text-slate-500">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+                </div>
+
+                <p class="text-slate-500 text-sm leading-snug">
+                  By subscribing, you authorize Reddit, Inc. to charge you according to the terms until you cancel.
+                </p>
+
+                <!-- Fake captcha -->
+                <div class="flex justify-center py-2">
+                  <div class="w-[360px] rounded-md border border-slate-200 bg-white p-3 flex items-center gap-4">
+                    <div class="w-7 h-7 border-2 border-slate-300 rounded-sm"></div>
+                    <div class="font-bold text-slate-700">I'm not a robot</div>
+                    <div class="ml-auto text-xs font-black text-slate-400">reCAPTCHA</div>
+                  </div>
+                </div>
+
+                <!-- Bottom row -->
+                <div class="flex items-center justify-between pt-1">
+                  <button
+                    id="purchaseBackBtn"
+                    type="button"
+                    class="px-6 py-3 rounded-xl bg-slate-100 text-slate-700 font-black"
+                  >
+                    Back
+                  </button>
+
+                  <button
+                    type="button"
+                    class="px-7 py-3 rounded-full bg-blue-700 text-white font-black"
+                  >
+                    Complete purchase
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div> <!-- end BODY WRAPPER -->
+      </div> <!-- end .ui.modal -->
+    </div> <!-- end #avatarOverlay -->
+
+
+    <!-- PROFILE MODAL (Semantic modal structure) -->
+    <div
+      class="ui dimmer modals page transition hidden"
+      id="profileOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="profileTitle"
+      aria-hidden="true"
+    >
+      <div class="ui modal transition hidden" role="document">
+        <div class="header">
+          <div>
+            <div class="ui header" id="profileTitle" style="margin: 0;">Profile</div>
+            <div class="sub header" id="profileSubtitle">Account details</div>
+          </div>
+          <button class="ui icon button" id="profileCloseBtn" aria-label="Close" type="button">
+            <i class="close icon"></i>
+          </button>
+        </div>
+
+        <div class="content" id="profileBody"></div>
+
+        <div class="actions">
+          <div class="ui left floated">
+            <button class="ui basic button" id="profileFooterClose" type="button">Close</button>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/assets/app.js"></script>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
