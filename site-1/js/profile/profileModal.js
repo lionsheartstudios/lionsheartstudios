@@ -2,7 +2,7 @@ import { $ } from "../utils/dom.js";
 import { state } from "../state/sessionState.js";
 import { hardHideMenu, closeMenu, dropdownEls } from "../ui/dropdowns.js";
 import { setLoggedInUI } from "../auth/authUI.js";
-import { addEnvPrefix } from "../utils/addEnvPrefix.js";
+import { addPrefixAndSiteVersion, addPrefixOnly } from "../utils/addDirectoryPrefix";
 
 /* =========================
         PROFILE MODAL
@@ -24,7 +24,7 @@ function openProfileModal() {
   if (profileBody) {
     profileBody.innerHTML = `
       <div class="profile-header">
-        <img class="profile-avatar" src="${addEnvPrefix(u.avatarUrl)}" alt="Profile avatar" />
+        <img class="profile-avatar" src="${addPrefixOnly(u.avatarUrl)}" alt="Profile avatar" />
         <div class="profile-names">
           <div class="profile-fullname" title="${u.fullName}">${u.fullName}</div>
           <div class="profile-displayname" title="${u.displayName}">${u.displayName}</div>
@@ -234,14 +234,14 @@ export function initProfileModal() {
 
       if (action === "manage-courses") {
         closeMenu(dropdownEls.userMenu, dropdownEls.avatarBtn);
-        window.location.href = addEnvPrefix("educators/");
+        window.location.href = addPrefixAndSiteVersion("educators/");
         return;
       }
 
       if (action === "signout") {
         setLoggedInUI(false);
         hardHideMenu(dropdownEls.userMenu, dropdownEls.avatarBtn);
-        window.location.href = addEnvPrefix("");
+        window.location.href = addPrefixAndSiteVersion("");
         return;
       }
     });
