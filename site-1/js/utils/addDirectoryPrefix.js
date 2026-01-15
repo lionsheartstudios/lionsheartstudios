@@ -1,19 +1,20 @@
-export const addPrefixAndSiteVersion = (path = "") => {
-  const base = import.meta.env.BASE_URL || "/";
-  const cleanBase = base.replace(/\/$/, "");
-  const cleanPath = path.replace(/^\//, "");
+// addDirectoryPrefix.js
 
-  return cleanPath ? `${cleanBase}/${cleanPath}` : cleanBase;
+const clean = (s = "") => String(s).replace(/^\/+|\/+$/g, "");
+const join = (...parts) => parts.map(clean).filter(Boolean).join("/");
+
+const PATH_PREFIX = env.VITE_PATH_PREFIX || env.PATH_PREFIX || "";
+const SITE_VERSION = env.VITE_SITE_VERSION || env.SITE_VERSION || "";
+
+const withLeadingSlash = (s = "") => {
+  const c = clean(s);
+  return c ? `/${c}` : "";
+};
+
+export const addPrefixAndSiteVersion = (path = "") => {
+  return withLeadingSlash(join(PATH_PREFIX, SITE_VERSION, path));
 };
 
 export const addPrefixOnly = (path = "") => {
-  const prefix = import.meta.env.VITE_PATH_PREFIX || "";
-  const cleanPrefix = prefix.replace(/^\/|\/$/g, "");
-  const cleanPath = path.replace(/^\//, "");
-
-  if (!cleanPrefix) return cleanPath ? `/${cleanPath}` : "/";
-
-  return cleanPath
-    ? `/${cleanPrefix}/${cleanPath}`
-    : `/${cleanPrefix}`;
+  return withLeadingSlash(join(PATH_PREFIX, path));
 };
