@@ -1,0 +1,380 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*@import url('https://fonts.googleapis.com/css?family=Skranji');
+@import url('https://fonts.googleapis.com/css?family=Jost');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@700&display=swap');*/
+
+@font-face {
+  font-family: 'Gill Sans Regular';
+  src: local('Gill Sans Regular'), url('../assets/fonts/Gill\ Sans\ Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans Bold';
+  src: local('Gill Sans Bold'), url('../assets/fonts/Gill\ Sans\ Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gill Sans Condensed Bold';
+  src: local('Gill Sans Condensed Bold'), url('../assets/fonts/Gill\ Sans\ Condensed\ Bold.otf') format('opentype');
+}
+
+body {
+  font-family: 'Gill Sans Regular', sans-serif;
+  background-color: #35b3c2;
+}
+
+h1, h2, h3, h4, h5, h6, button, a {
+  font-family: 'Gill Sans Bold', sans-serif;
+}
+
+label {
+  font-family: 'Gill Sans Condensed Bold';
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+label input[type="checkbox"] {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  appearance: none;
+  cursor: pointer;
+}
+
+label input[type="checkbox"]:before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 50%;
+}
+
+label input[type="checkbox"]:checked:before {
+  background-color: #fff;
+}
+
+svg * { 
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.customTitleText {
+  font-family: 'Gill Sans Condensed Bold';
+  /*text-shadow: 0.05em 0.05em 0 rgba(0,0,0,0.15);
+  text-shadow:  1px 1px 0 #aaa,
+                -1px 1px 0 #aaa,
+                1px -1px 0 #aaa,
+                -1px -1px 0 #aaa;*/
+}
+
+.dropShadowLight {
+  filter: drop-shadow(0.05em 0.05em 0 rgba(0, 0, 0, 0.15));
+}
+
+.dropShadowDark {
+  filter: drop-shadow(0.1em 0.1em 0 rgba(0, 0, 0, 0.25));
+
+}
+
+.blockquoteInner:before,
+.blockquoteInner::after {
+  font-size: 10em;
+  position: absolute;
+  opacity: 0.15;
+}
+
+.blockquoteInner:before {
+  content: '”';
+  top: 50%;
+  left: -5%;
+}
+
+.blockquoteInner::after {
+  content: "“";
+  bottom: 50%;
+  right: -5%;
+  transform: scaleY(-1);
+}
+
+.underlineLink {
+  text-transform: uppercase;
+  position: relative;
+}
+
+.underlineLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background-color: currentColor;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.underlineLink:hover::after {
+  left: 0;
+  right: 0;
+}
+
+.shineElement::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 200%;
+  left: 0;
+  height: 200%;
+  width: 200%;
+  background-color: white;
+  opacity: 10%;
+  transform: rotate(45deg);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.shineElement:hover::after {
+  top: 0;
+}
+
+.react-photo-album img {
+  object-fit: cover;
+  overflow-clip-margin: unset;
+  overflow: visible;
+}
+
+.comingSoon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  width: 200%;
+  font-size: 1.5em;
+  height: 3em;
+  line-height: 3em;
+  background-color: rgba(15, 16, 61, 0.5);
+  text-align: center;
+}
+
+.prettyList li {
+  position: relative;
+}
+
+.prettyList li::after {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: -1em;
+  height: 0.5em;
+  width: 0.5em;
+  background-color: white;
+  border-radius: 0.15em;
+}
+
+.prettierList li {
+  position: relative;
+}
+
+.prettierList li:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  bottom: -1em;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0.1em;
+  width: 25%;
+  background-color: white;
+  border-radius: 0.15em;
+}
+
+.prettiestList li {
+  position: relative;
+}
+
+.prettiestList li > *:first-of-type:before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: -0.1em;
+  margin-right: 0.5em;
+  height: 0.5em;
+  width: 0.5em;
+  background-color: white;
+  border-radius: 0.15em;
+}
+
+.bulletPoint:before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: -0.1em;
+  margin-right: 0.5em;
+  height: 0.5em;
+  width: 0.5em;
+  background-color: white;
+  border-radius: 0.15em;
+}
+
+/*
+███████  ██████ ██████   ██████  ██      ██      ██████   █████  ██████  
+██      ██      ██   ██ ██    ██ ██      ██      ██   ██ ██   ██ ██   ██ 
+███████ ██      ██████  ██    ██ ██      ██      ██████  ███████ ██████  
+     ██ ██      ██   ██ ██    ██ ██      ██      ██   ██ ██   ██ ██   ██ 
+███████  ██████ ██   ██  ██████  ███████ ███████ ██████  ██   ██ ██   ██ 
+                                                                         
+                                                                         
+*/
+
+.my-scrollable {
+  overflow: auto; /* or scroll */
+  scrollbar-width: auto; /* Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+
+/* WebKit (Chrome, Edge, Safari, Opera) */
+.my-scrollable::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+.my-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.my-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background-clip: padding-box;
+  border: 3px solid transparent;
+}
+
+.my-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/*
+███████ ███████ ██████   ██████  ██████  ████████ ███████     ██████   █████   ██████  ███████ 
+██      ██      ██   ██ ██    ██ ██   ██    ██    ██          ██   ██ ██   ██ ██       ██      
+█████   ███████ ██████  ██    ██ ██████     ██    ███████     ██████  ███████ ██   ███ █████   
+██           ██ ██      ██    ██ ██   ██    ██         ██     ██      ██   ██ ██    ██ ██      
+███████ ███████ ██       ██████  ██   ██    ██    ███████     ██      ██   ██  ██████  ███████ 
+                                                                                               
+                                                                                               
+*/
+
+.flatify-tournament-table {
+  width: 100%;
+}
+
+.flatify-tournament-table table,
+.flatify-tournament-table thead,
+.flatify-tournament-table tbody,
+.flatify-tournament-table tfoot,
+.flatify-tournament-table tr,
+.flatify-tournament-table td {
+  display: block;
+  position: static;
+  white-space: nowrap;
+}
+
+.flatify-tournament-table thead,
+.flatify-tournament-table tfoot,
+.flatify-tournament-table tr:nth-child(n+11) {
+  display: none;
+}
+
+.flatify-tournament-table > tbody {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hoverButton,
+.flatify-tournament-table .flatify-table-entry {
+  background-color: rgba(0,0,0,0.15);
+  border-radius: .5rem;
+
+  margin: .25rem;
+  padding: .5rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  position: relative;
+  bottom: 0;
+  left: 0;
+  transition: 0.1s ease-out;
+}
+
+.hoverButton {
+  display: block;
+  text-align: center;
+}
+
+.hoverButton:hover,
+.hoverButton.selected,
+.flatify-tournament-table .flatify-table-entry:hover {
+  background-color: rgba(0,0,0,0.25);
+  bottom: .2rem;
+  left: .1rem;
+}
+
+.hoverButton.selected {
+  background-color: rgba(0,0,0,0.35);
+}
+
+.flatify-tournament-table .flatify-table-entry { cursor: default; }
+.flatify-tournament-table .flatify-table-entry:hover { background-color: rgba(0,0,0,0.15); bottom: 0; left: 0; }
+
+.flatify-tournament-table .flatify-table-entry.rank-1 { background-color: rgba(255, 204, 0, 0.55); }
+.flatify-tournament-table .flatify-table-entry.rank-2 { background-color: rgba(179, 179, 204, 0.55); }
+.flatify-tournament-table .flatify-table-entry.rank-3 { background-color: rgba(255, 80, 80, 0.55); }
+
+/* tooltips */
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(75%);
+  z-index: 9;
+  text-align: left;
+
+  white-space: wrap;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.1s ease-out;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  bottom: -.2rem;
+}
+
+.tooltip:hover .tooltiptext.lower {
+  bottom: -15%;
+}
+
+.tooltiptext p,
+.tooltiptext ul {
+  margin-bottom: 1em;
+}
+
+.tooltiptext ul {
+  list-style-type: disc;
+  padding-left: 1em;
+}
