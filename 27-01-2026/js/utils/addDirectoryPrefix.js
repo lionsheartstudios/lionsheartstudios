@@ -2,7 +2,7 @@
 
 export const addPrefixAndSiteVersion = (path = "") => {
   //return "/" + path;
-  return "/lionsheartstudios/27-01-2026/" + path; // with trailing slash
+  return "/lionsheartstudios//lionsheartstudios/27-01-26/" + path; // with trailing slash
 };
 
 export const addPrefixOnly = (path = "") => {
